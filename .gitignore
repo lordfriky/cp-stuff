@@ -1,3 +1,6 @@
+# Compiled binaries
+*.bin
+
 # macOS garbage
 .DS_Store
 

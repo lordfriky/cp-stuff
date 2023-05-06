@@ -1,8 +1,14 @@
 # Compiled binaries
 *.bin
+*.out
 
 # macOS garbage
 .DS_Store
 
 # CPH extension subfolders
 .cph/
+
+# Tests
+test/*
+in
+out

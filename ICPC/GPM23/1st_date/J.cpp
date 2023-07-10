@@ -4,7 +4,7 @@ Grupo Marrano - El Ansioso
 ↻        ⊲  Ⅱ  ⊳        ↺
    VOLUME: ▁▂▃▄▅▆▇ 100%
 
-Problem: X. Description...
+Problem: J. Jumping Reaction
 */
 
 #include <bits/stdc++.h>
@@ -22,8 +22,33 @@ using namespace std;
 using vi = vector<int>;
 using pii = pair<int, int>;
 
+lli MOD = 1e9 + 7;
+
 void solve(){
-  ;
+  int n, q;
+  cin >> n >> q;
+
+  vi arr(n);
+  fore(i,0,n) cin >> arr[i];
+
+  while(q--){
+    int l, r;
+    cin >> l >> r;
+
+    lli sum = 0;
+    fore(i,l-1,r){
+      sum += arr[i];
+      sum %= MOD;
+    }
+
+    sum *= sum;
+    sum %= MOD;
+
+    fore(i,l-1,r)
+      sum -= ((lli)arr[i] * (lli)arr[i]) % MOD;
+
+    cout << sum/2 << ENDL;
+  }
 }
 
 int main(){

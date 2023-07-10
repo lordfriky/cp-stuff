@@ -4,7 +4,7 @@ Grupo Marrano - El Ansioso
 ↻        ⊲  Ⅱ  ⊳        ↺
    VOLUME: ▁▂▃▄▅▆▇ 100%
 
-Problem: X. Description...
+Problem: A. Aliases
 */
 #include <bits/stdc++.h>
 #define ENDL '\n'
@@ -22,32 +22,26 @@ using namespace std;
 using vi = vector<int>;
 
 void solve(){
-    int n, m; cin >> n >> m;
-    lli entradas[n], salidas[m];
-    fore(i,0,n) cin >> entradas[i];
-    fore(i,0,m) cin >> salidas[i];
-    multiset<lli> ts;
+  int n; cin >> n;
+  map<string, int> ola;
 
-    fore(i,0,n)
-        fore(j,0,m)
-            if(salidas[j] >= entradas[i]) ts.insert(salidas[j] - entradas[i]);
-    
-    lli maxrep = 0;
-    lli prev = -1;
-    lli repc = 0;
-    lli maxts = 0;
-    
-    for(auto x : ts){
-        if(x != prev){
-            if()
-            prev = x;
-            repc
-        }
+  fore(i,0,n){
+    int c; cin >> c;
+    string aux, id = "";
+    fore(i,0,c){
+      cin >> aux;
+      id += aux[0];
     }
 
-    cout << maxts << ENDL;
+    ola[id]++;
+  }
 
-    
+  int unicos = 0;
+
+  for(auto x : ola)
+    if(x.second == 1) unicos++;
+
+  cout << unicos << ENDL;
 }
 
 int main(){

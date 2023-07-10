@@ -4,7 +4,7 @@ Grupo Marrano - El Ansioso
 ↻        ⊲  Ⅱ  ⊳        ↺
    VOLUME: ▁▂▃▄▅▆▇ 100%
 
-Problem: X. Description...
+Problem: D. Dynamic Collection
 */
 
 #include <bits/stdc++.h>
@@ -23,7 +23,23 @@ using vi = vector<int>;
 using pii = pair<int, int>;
 
 void solve(){
-  ;
+  int n, q; cin >> n >> q;
+  vi arr(n);
+  fore(i,0,n) cin >> arr[i];
+  sort(all(arr));
+  int a, b, c;
+  fore(i,0,q){
+    cin >> a;
+    if(a == 1){
+      cin >> b;
+      if(*lower_bound(all(arr), b) == b) continue;
+      else if(arr[sz(arr) - 1] < b) arr.pb(b);
+      else *upper_bound(all(arr), b) = b;
+    } else {
+      cin >> b >> c;
+      cout << upper_bound(all(arr), c) - lower_bound(all(arr), b) << ENDL;
+    }
+  }
 }
 
 int main(){
